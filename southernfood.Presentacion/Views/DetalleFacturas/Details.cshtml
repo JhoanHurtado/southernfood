@@ -1,0 +1,50 @@
+﻿@model southernfood.Data.Models.DetalleFactura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DetalleFactura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Factura.NroFactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Factura.NroFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdDetalleFactura }) |
+    @Html.ActionLink("Back to List", "Details", "Factura", new { id = Model.NroFactura }, null)
+</p>

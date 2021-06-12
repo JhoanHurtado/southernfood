@@ -1,0 +1,42 @@
+﻿@model southernfood.Data.Models.Mesa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mesa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reservada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reservada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puestos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puestos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NroMesa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

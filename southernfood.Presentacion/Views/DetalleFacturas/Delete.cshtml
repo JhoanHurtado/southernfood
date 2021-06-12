@@ -1,0 +1,56 @@
+﻿@model southernfood.Data.Models.DetalleFactura
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DetalleFactura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Factura.NroFactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Factura.NroFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Details", "Factura", new { id = Model.NroFactura }, null)
+    </div>
+    }
+</div>

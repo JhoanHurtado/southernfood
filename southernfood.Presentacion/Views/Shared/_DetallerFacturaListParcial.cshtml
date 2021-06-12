@@ -1,0 +1,45 @@
+﻿@model IEnumerable<southernfood.Data.Models.DetalleFactura>
+
+<p>
+    @Html.ActionLink("Añadir nuevo Item", "Create", "DetalleFacturas", new { factura = ViewBag.FacturaId }, null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Factura.NroFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Supervisor.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Factura.NroFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Supervisor.Nombres)
+        </td>
+        <td>            
+            @Html.DisplayFor(modelItem => item.Plato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "DetalleFacturas", new { id=item.IdDetalleFactura }, null) |
+            @Html.ActionLink("Details", "Details", "DetalleFacturas", new { id=item.IdDetalleFactura }, null) |
+            @Html.ActionLink("Delete", "Delete", "DetalleFacturas", new { id=item.IdDetalleFactura }, null)
+        </td>
+    </tr>
+}
+
+</table>

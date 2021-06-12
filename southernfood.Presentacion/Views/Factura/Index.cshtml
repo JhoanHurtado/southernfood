@@ -1,0 +1,51 @@
+﻿@model IEnumerable<southernfood.Data.Models.Factura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cliente.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mesa.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mesero.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cliente.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mesa.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mesero.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NroFactura }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NroFactura }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NroFactura })
+        </td>
+    </tr>
+}
+
+</table>

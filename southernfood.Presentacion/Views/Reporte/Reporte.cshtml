@@ -1,0 +1,86 @@
+﻿@model southernfood.Datos.ViewModels.ReporteViewModel
+@{
+    ViewBag.Title = "Reporte";
+}
+
+<h2>Reportes</h2>
+
+<h3>Vendido por cada mesero</h3>
+<table class="table">
+    <tr>
+        <th>
+            Nombres
+        </th>
+        <th>
+            Apellidos
+        </th>
+        <th>
+            Vendido
+        </th>
+    </tr>
+
+    @foreach (var item in Model.meseros)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Model.costsum(item.Facturas)
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<h3>Clientes con mayor consumo</h3>
+<table class="table">
+    <tr>
+        <th>
+            Nombres
+        </th>
+        <th>
+            Apellidos
+        </th>
+        <th>
+            Telefono
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Facturas)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliente.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliente.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliente.Telefono)
+            </td>
+        </tr>
+    }
+</table>
+
+<h3>Producto Mas Vendido del mes</h3>
+<div>
+
+
+        <div>
+            <strong>Producto: </strong> @ViewBag.PlatoMasVendido
+        </div>
+
+        <div>
+            <strong>Cantidad vendida: </strong> @ViewBag.VecesVendidas
+        </div>
+
+        <div>
+            <strong>Monto Facturado: </strong> @ViewBag.MontoFacturado
+        </div>
+
+
+</div>
+

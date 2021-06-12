@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Reporte";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<form id="reportForm" method="post" action="/Reporte/reportePorReangodeFechas">
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="date" class="form-control" id="fechaInicial" name="fechaInicial" placeholder="Fecha Inicial" required data-error="Por favor ingresa la fecha de inicio">
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="date" placeholder="Fecha Limite" id="fechaFinal" class="form-control" name="fechaFinal" required data-error="Por favor ingresa la fecha limite">
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="number" placeholder="Fecha Limite" id="valor" class="form-control" name="valor">
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="date" placeholder="Plato mas bendido del mes" id="mes" class="form-control" name="mes" required data-error="Por favor ingresa el mes para ver el producto mas vendido">
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="submit-button">
+                <button class="btn btn-default" id="submit" type="submit">Consultar</button>
+                <div id="msgSubmit" class="h3"></div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</form>
